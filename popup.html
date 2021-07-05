@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row" id="settingstr" style="background-image:url(logo.png);background-repeat: no-repeat;"><div class="col-2 offset-9" id="settings"><button class="btn btn-primary" id="settingsbtn">Settings</button></div></div>
+        <div class="row" id="scrappannel">
+        <div class="row" id="titletr"><div id="title"><span class="input-group-text" for="title">Title</span><br><input class="form-control" type="text" name="title" id="titleinpt" /></div></div>
+        <div class="row" id="pricetr"><div id="price"><span class="input-group-text" for="price">Price</span><br><input class="form-control" type="text" name="price" id="priceinpt" /></div></div>
+        <div class="row" id="descriptiontr"><div id="description"><span class="input-group-text" for="description">Description</span><br><textarea class="form-control" name="description" id="descriptioninpt"  rows="4" cols="50"></textarea></div></div>
+        <div class="row" id="categoriesshow"></div>
+        <div class="row" id="categoriestr"><div id="categories">
+            <span class="input-group-text" for="categories">Categories</span>
+            <input placeholder="Search category" id="searchcategoryinput" class="input-group col-10"/>
+             <select class="form-select" name="categories" id="categoriesdd">
+          </select>
+        </div>
+        </div>
+        <div class="row" id="asintr">
+            <div id="asin"><span class="input-group-text" for="asin">Asin</span><br><input class="form-control" type="text" name="asin" id="asininpt" /></div>
+        </div>
+            <div class="row" id="isbn"></div><div id="isbn"><span class="input-group-text" for="isbn">ISBN-13</span><br><input class="form-control" type="text" name="isbn" id="isbninpt" /></div>
+        
+
+            <div class="row">
+                <div id="images"><span class="images input-group-text" >Images</span><br> </div>
+
+        
+            <div id="buttontr" class="row">
+            <div class="col-3"></div>
+            <div class="col-6"  id="sendtowoo"><button class="btn btn-success" id="woocomsbtn">Send to Woocommerce</button></div>
+            <div class="col-3"></div>
+        </div>
+    </div>
+</div>
+
+<div class="row" id="settingspannel">
+<div class="row" id="settingspannelheading"><div class="col-6"><span>Cost ranges</span></div><div class="col-4"><span>Product price</span></div></div>
+<div id="productpricecontainer">
+<div class="row" id="productpricerow">
+    <div class="col-2">
+    <input class="form-control productpriceinput" type="number"  data-name="from" id="productpriceinputfrom" />
+</div>
+<div class="col-1">
+    <span />to<span>
+</div>
+    <div class="col-2">
+        <input class="form-control productpriceinput" type="number" data-name="to" id="productpriceinputto"/>
+    </div>
+    <div class="col-2">
+        <span />* = <span>
+    </div>
+    <div class="col-3">
+        <input class="form-control productpriceinput" type="number" data-name="multiplier" id="productpriceinputmultiplier"/>
+    </div>
+        <div class="col-2"><button class="btn btn-danger delr" data-id="productpricerow"  id="delproductprice">del</button></div>  
+        <div class="col-4 offset-8" style="margin-top: 10px;"><button class="btn btn-success" id="addproductprice">Add new row</button></div>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-12">
+            <span class="input-group-text">Default Woocommerce Category</span>
+        </div>
+        <div class="col">
+        <input class="form-control" type="text" id="woocommercedefaultcategory" />
+        </div>
+    </div>
+        <div class="row">
+            <div class="col-12">
+                <span class="input-group-text">Woocommerce Public key</span>
+            </div>
+            <div class="col">
+            <input class="form-control" type="text" id="woocommercepublickey" />
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-12">
+                    <span class="input-group-text">Woocommerce Private Key</span>
+                </div>
+                <div class="col">
+                <input class="form-control" type="text" id="woocommerceprivatekey" />
+                </div>
+            </div>
+                <div class="row">
+                    <div class="col-12">
+                        <span class="input-group-text">Woocommerce URL</span>
+                    </div>
+                    <div class="col">
+                    <input class="form-control" type="text" id="woocommerceurl" />
+                    </div>
+                </div>
+                    <div class="row">
+                        <div class="col-2 ">
+                            <div class="input-group-text">
+                        <label class="switch">
+                            <input type="checkbox" id="bkfadendtitl" >
+                            <span class="slider round"></span>
+                          </label>
+                        </div>
+                        </div>
+                        <div class="col-10">
+                            <span class="input-group-text">Add the book format at the end of title</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2 ">
+                            <div class="input-group-text">
+                        <label class="switch">
+                            <input type="checkbox" id="numpadendtitl" >
+                            <span class="slider round"></span>
+                          </label>
+                        </div>
+                        </div>
+                        <div class="col-10">
+                            <span class="input-group-text">Add the number of pages at the end of title</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2 ">
+                            <div class="input-group-text">
+                        <label class="switch">
+                            <input type="checkbox" id="brndedtiorpraesentindescrip" >
+                            <span class="slider round"></span>
+                          </label>
+                        </div>
+                        </div>
+                        <div class="col-10">
+                            <span class="input-group-text">Is brand editor present in the title or description</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2 ">
+                            <div class="input-group-text">
+                        <label class="switch">
+                            <input type="checkbox" id="amazonpresentdescortitl" >
+                            <span class="slider round"></span>
+                          </label>
+                        </div>
+                        </div>
+                        <div class="col-10">
+                            <span class="input-group-text">Is amazon word present in the title or description</span>
+                        </div>
+                    </div>
+                    <div id="buttontr" class="row">
+                        <div class="col-6 offset-3" id="messagepan"></div>
+                        <div class="col-2 offset-3" id="preview"><button class="btn btn-warning" id="resetproductprice">Discard</button></div>
+                        <div class="col-2  offset-1"  id="sendtowoo"><button class="btn btn-success" id="saveproductprice">Accept</button></div>
+                    </div>
+</div>
+</div>
+</div>
+
+    <script src="jquery.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>

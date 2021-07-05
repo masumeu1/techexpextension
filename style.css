@@ -1,0 +1,24 @@
+body
+{
+    background-color: #CCCCCC;
+    width: 500px;
+}
+#images .col-2
+{
+    float: left;
+}
+
+.container .row
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#buttontr
+{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+#settingstr
+{
+    padding-bottom: 6px;
+}

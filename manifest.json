@@ -1,0 +1,37 @@
+{
+    "manifest_version": 2,
+    "name": "E-coomerce to Woocommerce dropshipping",
+    "description": "An extension for E-coomerce to Woocommerce dropshipping",
+    "version": "1.0.0",
+    "icons": { 
+      "16": "icon16.png",
+      "48": "icon48.png",
+     "128": "icon128.png" },
+    "browser_action": {
+        "default_icon": "icon16.png",
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "persistent": true,
+        "scripts": ["jquery.js","background.js"]
+    },
+    "content_scripts": [
+        {
+          "matches": ["https://www.amazon.fr/*","https://www.amazon.de/*","https://www.amazon.it/*","https://www.amazon.es/*","https://www.amazon.co.uk/*","https://www.amazon.com/*"],
+          "js": ["jquery.js","amazon.js"],
+          "run_at": "document_idle"
+        },
+        {
+          "matches": ["https://www.aliexpress.com/item/*","https://es.aliexpress.com/item/*"],
+          "js": ["jquery.js","aliexpress.js"],
+          "run_at": "document_idle"
+        },
+        {
+          "matches": ["https://detail.1688.com/offer/*"],
+          "js": ["jquery.js","1688.js"],
+          "run_at": "document_idle"
+        }
+      ],
+      "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'" ,
+      "permissions" : ["activeTab","tabs","storage","https://www.amazon.fr/*","https://www.amazon.de/*","https://www.amazon.it/*","https://www.amazon.es/*","https://www.amazon.co.uk/*","https://www.amazon.com/*","https://test.techexp.digital/","https://test.techexp.digital/wp-json/wc/v3/products/categorie?per_page=100","https://woocommercedropshipping.herokuapp.com/file"]
+}   
